@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".grpc.echo.EchoActivity"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/host_edit_text"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Host" />
+        <EditText
+            android:id="@+id/port_edit_text"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Enter Port" />
+    </LinearLayout>
+
+    <LinearLayout style="?android:buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button style="?android:buttonBarButtonStyle"
+            android:id="@+id/start_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="startEcho"
+            android:text="Start Echo" />
+        <Button style="?android:buttonBarButtonStyle"
+            android:id="@+id/exit_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="exitEcho"
+            android:text="Exit Echo" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/unary_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="unaryEcho"
+        android:text="Unary Echo" />
+
+    <Button
+        android:id="@+id/server_stream_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="serverStreamingEcho"
+        android:text="Server Streaming Echo" />
+
+    <Button
+        android:id="@+id/client_stream_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clientStreamingEcho"
+        android:text="Client Streaming Echo"
+        android:clickable="false"/>
+
+    <Button
+        android:id="@+id/bidirectional_stream_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="bidirectionalStreamingEcho"
+        android:text="Bidirectional Streaming Echo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <EditText
+            android:id="@+id/input_stream"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Input Stream" />
+
+        <Button
+            android:id="@+id/send_stream"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="sendStream"
+            android:text="Send" />
+
+        <Button
+            android:id="@+id/end_stream"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="endStream"
+            android:text="End" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/result_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars = "vertical"
+            android:textSize="16sp"/>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
